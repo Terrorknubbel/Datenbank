@@ -1,0 +1,70 @@
+body {
+  display:inline-grid;
+  text-align: center;
+}
+#db {
+  border: 1px black solid;
+
+
+}
+
+article{
+  border: 1px black solid;
+}
+
+table{
+  margin-left: 10%;
+}
+th, td {
+  border-bottom: 1px black solid;
+
+}
+
+button {
+  border-radius: 20px;
+  font-family: monospace;
+  font-size: 1.3em;
+  background-color: lightblue;
+}
+
+div#change {
+  margin-left: 8%;
+}
+
+#id{
+  margin-left: 8%;
+}
+
+input[type="text"]:disabled {
+  background: #dddddd;
+}
+
+#name{
+  margin-left: 2.5%;
+}
+
+input[id=aus] {
+    pointer-events: none;
+   }
+
+#aus {
+  background-color: lightgrey;
+}
+
+button[value=Löschen] {
+  border-radius: 20px;
+  font-family: monospace;
+  font-size: 1.3em;
+  background-color: red;
+}
+
+input[type=submit], input[type=reset] {
+  border-radius: 20px;
+  font-family: monospace;
+  font-size: 1.3em;
+  background-color: lightblue;
+}
+
+input {
+  background-color: #d0f5ed;
+}
