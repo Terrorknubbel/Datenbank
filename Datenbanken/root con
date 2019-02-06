@@ -1,0 +1,10 @@
+<?php
+    $con = mysqli_connect("", "root");
+
+    mysqli_select_db($con, "login");
+
+    $res = mysqli_query($con, "SELECT * from shoplogin");
+    $dsatz = mysqli_fetch_assoc($res);
+    echo $dsatz["Vorname"];
+
+    ?>
