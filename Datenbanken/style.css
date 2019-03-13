@@ -1,51 +1,31 @@
 body {
-  display:inline-grid;
   text-align: center;
+  font-weight: bold;
 }
 #db {
-  border: 1px black solid;
-
-
+  border: 2px black solid;
 }
 
 article{
-  border: 1px black solid;
+  border: 2px black solid;
 }
 
 table{
-  margin-left: 10%;
+  margin: auto;
+  background-image: linear-gradient(to right, white, #8ddfff, white);
+  border-radius: 20px;
 }
 th, td {
   border-bottom: 1px black solid;
-
-}
-
-button {
-  border-radius: 20px;
-  font-family: monospace;
-  font-size: 1.3em;
-  background-color: lightblue;
-}
-
-div#change {
-  margin-left: 8%;
-}
-
-#id{
-  margin-left: 8%;
 }
 
 input[type="text"]:disabled {
   background: #dddddd;
 }
 
-#name{
-  margin-left: 2.5%;
-}
-
 input[id=aus] {
     pointer-events: none;
-   }
+}
 
 #aus {
   background-color: lightgrey;
@@ -62,9 +42,9 @@ input[type=submit], input[type=reset] {
   border-radius: 20px;
   font-family: monospace;
   font-size: 1.3em;
-  background-color: lightblue;
+  background-color: #00b7ff;
 }
 
 input {
-  background-color: #d0f5ed;
+  background-color: #8ddfff;
 }

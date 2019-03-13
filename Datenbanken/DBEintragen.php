@@ -1,50 +1,38 @@
-<html>
-<body>
-    <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
-    <?php
 
-    $mysqli = mysqli_connect("","root");
-    mysqli_select_db($mysqli, "adressen");
-    $mysqli->set_charset("utf8");
+<?php
 
-    ?>
-        <input type="text" name="name" required /> Name<br/>
-        <input type="text" name="wohnort" required /> Wohnort<br/>
-        <input type="text" name="plz" required /> PLZ<br/>
-        <input type="text" name="gehalt" required /> Gehalt<br/>
-        <input type="submit" name="speichern" value="Speichern" />
-        <button type="button" onclick="home()" name="Home">Home</button>
+try {
+  $value1 = $_POST['1'];
+  $value2 = $_POST['2'];
+  $value3 = $_POST['3'];
+  $value4 = $_POST['4'];
+  $value5 = $_POST['5'];
+}
 
-        <script type="text/javascript">
-          function home(){
-            location.href = "index.php";
-          }
-        </script>
+catch(Exception $e) {
 
-    <?php
-        if (isset($_POST['speichern'])) {
-            $name = $mysqli->escape_string($_POST["name"]);
-            $wohnort = $mysqli->escape_string($_POST["wohnort"]);
-            $plz = $mysqli->escape_string($_POST["plz"]);
-            $gehalt = $mysqli->escape_string($_POST["gehalt"]);
-
-            $sql = "INSERT INTO adressen1";
-            $sql .= "(name, wohnort, plz, gehalt)";
-            $sql .= " VALUES ";
-            $sql .= "('$name','$wohnort','$plz','$gehalt')";
-            $mysqli->query($sql);
-            header( "refresh:0.1;url=index.php" );
-
-        };
-
-        $sql = "SELECT * From adressen ORDER BY Name";
-        $result = $mysqli->query($sql);
+}
 
 
+include("Connect.php");
+$mysqli->set_charset("utf8");
 
-    ?>
-    </form>
+$header = array();
+
+$result = $mysqli->query("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME ='$Tabelle'");
+
+while ($db = $result->fetch_assoc()) {
+
+array_push($header, $db["COLUMN_NAME"]);
+
+};
 
 
-</body>
-</html>
+$sql = "INSERT INTO $Tabelle";
+$sql .= "($header[2], $header[3])";
+$sql .= " VALUES ";
+$sql .= "('$value2', '$value3')";
+$mysqli->query($sql);
+
+
+?>

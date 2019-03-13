@@ -1,24 +1,21 @@
 <?php
+$Tabelle = "daten";
+$Datenbank = "chat";
 
+$mysqli = mysqli_connect("", "root");
+mysqli_select_db($mysqli, $Datenbank);
 
-$name = $_POST['name'];
-$gehalt = $_POST['gehalt'];
-$id = $_POST['id'];
+$header = array();
 
-
+/*
 $servername = "localhost";
 $db = "id7616961_login";
 $username = "id7616961_terrorknubbel";
 $password = "robot";
 $Tabelle = "login";
 
-// Create connection
 $mysqli = new mysqli($servername, $username, $password, $db);
 $mysqli->set_charset("utf8");
+*/
 
-
-$sql = "UPDATE $Tabelle SET name='$name', gehalt='$gehalt' WHERE id = '$id'";
-$mysqli->query($sql);
-
-header( "refresh:0.1;url=db.php" );
  ?>
